@@ -1,0 +1,15 @@
+{% extends "PadelBanco/padre.html" %}
+
+ {% load static %}
+
+ {% block titulo %}PAGINA DE TURNOS {% endblock %}
+
+ {% block contenido_cambiante %}
+ <H1>TURNOS</H1>
+ <ul> 
+     {% for turno in turnos %}
+         <li>{{ turno.nombre }} - {{ turno.horario}} - {{ turno.completado}}</li>
+     {% endfor %}
+ </ul>
+
+{% endblock %}

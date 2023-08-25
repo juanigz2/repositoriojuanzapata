@@ -1,0 +1,22 @@
+{% extends "PadelBanco/padre.html" %}
+
+ {% load static %}
+
+ {% block titulo %}BUSQUEDA DE PROFESORES {% endblock titulo %}
+    
+
+ {% block contenido_cambiante %}
+     <h1>BUSCADOR</h1>
+
+    <form action="{% url 'buscar' %}" method="GET"> 
+     
+        <input type="text" name="apellido" id="apellido" placeholder="INGRESE APELLIDO"> 
+   
+             
+        <input type="submit" value="BUSCAR PROFESOR">
+   
+    </form>
+   
+       <h2>{{ mensaje }}</h2>
+
+{% endblock contenido_cambiante %}

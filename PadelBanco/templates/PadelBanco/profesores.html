@@ -1,0 +1,19 @@
+{% extends "PadelBanco/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}FORMULARIO DE CARGA DE PROFESORES {% endblock titulo %}
+
+{% block contenido_cambiante %}
+    <h2>FORMULARIO</h2>
+
+    <form action="{% url 'profesores' %}" method="POST"> {% csrf_token %}
+
+        {{ formulario.as_p }}
+
+        <input type="submit", value="CARGAR PROFESOR">
+    </form>
+
+    <h3>{{ mensaje }}</h3>
+
+{% endblock contenido_cambiante %}

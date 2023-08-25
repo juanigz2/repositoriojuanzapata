@@ -1,0 +1,21 @@
+{% extends "PadelBanco/padre.html" %}
+
+ {% load static %}
+
+ {% block titulo %}PAGINA DE ALUMNOS {% endblock %}
+
+ {% block contenido_cambiante %}
+  <H1>ALUMNOS</H1>
+
+     <form action="{% url 'alumnos' %}" method="POST"> {% csrf_token %}
+       <table>
+       {{ formulario.as_table }}
+       </table>
+
+       <input type="submit", value="Cargar alumno">
+     </form>
+
+     <h3>{{ mensaje }}</h3>
+
+
+{% endblock %}
